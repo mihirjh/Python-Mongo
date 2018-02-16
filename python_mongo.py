@@ -8,10 +8,14 @@ db=client.MihirDB
 resultset = db.inventory.find( {'status': 'D' })
 for record in resultset:
     pprint("Resultset Values:")
+    pprint("record['item']:")
     pprint(record['item'])
+    pprint("record['qty']:")
     pprint(record['qty'])
+    pprint("record['status']:")
     pprint(record['status'])
+    pprint("record['size']:")
     pprint(record['size'])
-    pprint()
+    pprint('Finish')
 
 client.close();
