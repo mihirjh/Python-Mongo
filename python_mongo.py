@@ -6,5 +6,12 @@ client = MongoClient("mongodb://localhost:27017")
 db=client.MihirDB
 # Issue the serverStatus command and print the results
 resultset = db.inventory.find( {'status': 'D' })
-print("Resultset Values:")
-print(resultset)
+for record in resultset:
+    pprint("Resultset Values:")
+    pprint(record['item'])
+    pprint(record['qty'])
+    pprint(record['status'])
+    pprint(record['size'])
+    pprint()
+
+client.close();
